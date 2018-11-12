@@ -36,7 +36,7 @@ module.exports = {
                 series: result[1].data
             }
 
-            client.set('entertainme', JSON.stringify(response), 'EX', 20);
+            client.set('entertainme', JSON.stringify(response), 'EX', 3600);
 
             if (res) res.status(200).json( response );
         }).catch((err) => {
