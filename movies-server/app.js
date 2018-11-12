@@ -1,3 +1,4 @@
+
 var createError = require('http-errors');
 var express = require('express');
 var cookieParser = require('cookie-parser');
@@ -8,7 +9,8 @@ var indexRouter = require('./routes/index');
 
 
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/movies', { useNewUrlParser: true });
+require('dotenv').config();
+mongoose.connect( process.env.DATABASE_URL, { useNewUrlParser: true });
 
 var app = express();
 
