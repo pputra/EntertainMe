@@ -3,8 +3,10 @@ var express = require('express');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const cors = require('cors');
+const expressGraphql = require('express-graphql');
 
 var indexRouter = require('./routes/index');
+const schema = require('./schemas/index');
 
 
 
@@ -18,7 +20,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 
-app.use('/', indexRouter);
+app.use('/', expressGraphql({
+  schema, graphiql: true
+}));
 
 
 // catch 404 and forward to error handler
