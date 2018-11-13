@@ -54,7 +54,7 @@ const schema = new GraphQLSchema({
                 }
             },
             addSeries: {
-                type: MovieType,
+                type: SeriesType,
                 args: {
                     title: { type: GraphQLString },
                     overview: { type: GraphQLString},
