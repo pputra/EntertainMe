@@ -62,7 +62,7 @@ module.exports = {
             method: 'GET',
             url: seriesUrl
         }).then((result) => {
-            console.log('anjingggg');
+            
             client.set('entertainme/series', JSON.stringify(result.data), 'EX', 60);
             resolve(result.data);
         }).catch((err) => {
